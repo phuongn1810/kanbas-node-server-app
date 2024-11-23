@@ -1,15 +1,22 @@
 import * as dao from "./dao.js";
 import * as modulesDao from "../Modules/dao.js";
-import * as assignmentDao from "../Assignments/dao.js";
 
 export default function CourseRoutes(app) {
+
+    /** Find Modules for the course */
+  app.get("/api/courses/:courseId/modules", (req, res) => {
+    const { courseId } = req.params;
+    const modules = modulesDao.findModulesForCourse(courseId);
+    res.json(modules);
+  });
+
   /** Find all courses */
   app.get("/api/courses", (req, res) => {
     const courses = dao.findAllCourses();
     res.send(courses);
   });
 
-  /** Delete a course */
+    /** Delete a course */
   app.delete("/api/courses/:courseId", (req, res) => {
     const { courseId } = req.params;
     const status = dao.deleteCourse(courseId);
@@ -24,14 +31,7 @@ export default function CourseRoutes(app) {
     res.send(status);
   });
 
-  /** Find Modules for the course */
-  app.get("/api/courses/:courseId/modules", (req, res) => {
-    const { courseId } = req.params;
-    const modules = modulesDao.findModulesForCourse(courseId);
-    res.json(modules);
-  });
-
-  /** Create Module for a course */
+    /** Create Module for a course */
   app.post("/api/courses/:courseId/modules", (req, res) => {
     const { courseId } = req.params;
     const module = {
@@ -41,22 +41,4 @@ export default function CourseRoutes(app) {
     const newModule = modulesDao.createModule(module);
     res.send(newModule);
   });
-
-  /** Get Course Assignments */
-  app.get("/api/courses/:courseId/assignments", (req, res) => {
-    const { courseId } = req.params;
-    const assignments = assignmentDao.findAssignmentsForCourse(courseId);
-    res.json(assignments);
-  });
-
-  /** Post new Assignment Route */
-  app.post("/api/courses/:courseId/assignments", (req, res) => {
-    const { courseId } = req.params;
-    const assignment = {
-      ...req.body,
-      course: courseId,
-    };
-    const newAssignment = assignmentDaoDao.createAssignment(assignment);
-    res.send(newAssignment);
-  });
-}
+};

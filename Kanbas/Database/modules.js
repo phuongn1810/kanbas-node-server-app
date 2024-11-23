@@ -1,5 +1,4 @@
-export default
-[
+export default [
   {
     "_id": "M101",
     "name": "Introduction to Rocket Propulsion",
@@ -7,17 +6,23 @@ export default
     "course": "RS101",
     "lessons": [
       {
-        "name": "Introduction to Rocket Propulsion I",
-        "description": "Rocket propulsion is the science of accelerating matter to very high speeds using rockets. The matter, called propellant, is stored in a tank and ejected at high speed through a nozzle. The propellant is ejected at high speed in the opposite direction of the desired rocket motion, as described by Newton's third law of motion."
+        "_id": "L101",
+        "name": "History of Rocketry",
+        "description": "A brief history of rocketry and space exploration.",
+        "module": "M101"
       },
       {
-        "name": "Introduction to Rocket Propulsion II",
-        "description": "Rocket propulsion is used in a wide variety of applications, including spaceflight, military missiles, and scientific research. The most common type of rocket propulsion system is the chemical rocket, which stores propellant in a tank and ejects it through a nozzle. Other types of rocket propulsion systems include electric propulsion, nuclear propulsion, and cold gas thrusters."
+        "_id": "L102",
+        "name": "Rocket Propulsion Fundamentals",
+        "description": "Basic principles of rocket propulsion.",
+        "module": "M101"
       },
       {
-        "name": "Introduction to Rocket Propulsion III",
-        "description": "The most common type of rocket propulsion system is the chemical rocket, which stores propellant in a tank and ejects it through a nozzle. Other types of rocket propulsion systems include electric propulsion, nuclear propulsion, and cold gas thrusters."
-      }       
+        "_id": "L103",
+        "name": "Rocket Engine Types",
+        "description": "Overview of different types of rocket engines.",
+        "module": "M101"
+      }
     ]
   },
   {
@@ -27,16 +32,22 @@ export default
     "course": "RS101",
     "lessons": [
       {
-        "name": "Fuel and Combustion I",
-        "description": "Rocket fuel is a material that releases energy when it is burned. The most common type of rocket fuel is liquid hydrogen, which is burned with liquid oxygen to produce water vapor. Other types of rocket fuel include kerosene, methane, and solid propellants."
+        "_id": "L201",
+        "name": "Rocket Fuel",
+        "description": "Overview of different types of rocket fuels.",
+        "module": "M102"
       },
       {
-        "name": "Fuel and Combustion II",
-        "description": "Rocket fuel is a material that releases energy when it is burned. The most common type of rocket fuel is liquid hydrogen, which is burned with liquid oxygen to produce water vapor. Other types of rocket fuel include kerosene, methane, and solid propellants."
+        "_id": "L202",
+        "name": "Combustion Processes",
+        "description": "Understanding combustion processes and efficiency.",
+        "module": "M102"
       },
       {
-        "name": "Fuel and Combustion III",
-        "description": "Rocket fuel is a material that releases energy when it is burned. The most common type of rocket fuel is liquid hydrogen, which is burned with liquid oxygen to produce water vapor. Other types of rocket fuel include kerosene, methane, and solid propellants."
+        "_id": "L203",
+        "name": "Combustion Instability",
+        "description": "Understanding combustion instability and mitigation.",
+        "module": "M102"
       }
     ]
   },
@@ -47,16 +58,22 @@ export default
     "course": "RS101",
     "lessons": [
       {
-        "name": "Nozzle Design I",
-        "description": "The nozzle is the part of a rocket engine that converts the energy of the propellant into kinetic energy. The nozzle is designed to accelerate the propellant to a high speed and direct it in the desired direction. The nozzle is designed to accelerate the propellant to a high speed and direct it in the desired direction."
+        "_id": "L301",
+        "name": "Nozzle Design",
+        "description": "Overview of different types of rocket nozzles.",
+        "module": "M103"
       },
       {
-        "name": "Nozzle Design II",
-        "description": "The nozzle is the part of a rocket engine that converts the energy of the propellant into kinetic energy. The nozzle is designed to accelerate the propellant to a high speed and direct it in the desired direction. The nozzle is designed to accelerate the propellant to a high speed and direct it in the desired direction."
+        "_id": "L302",
+        "name": "Nozzle Performance",
+        "description": "Understanding nozzle performance and efficiency.",
+        "module": "M103"
       },
       {
-        "name": "Nozzle Design III",
-        "description": "The nozzle is the part of a rocket engine that converts the energy of the propellant into kinetic energy. The nozzle is designed to accelerate the propellant to a high speed and direct it in the desired direction. The nozzle is designed to accelerate the propellant to a high speed and direct it in the desired direction."
+        "_id": "L303",
+        "name": "Nozzle Optimization",
+        "description": "Optimizing nozzle design for specific applications.",
+        "module": "M103"
       }
     ]
   },

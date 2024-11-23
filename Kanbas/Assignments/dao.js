@@ -1,32 +1,36 @@
-import Database from "../Database/index.js";
+import * as db from "../Database/index.js";
 
+export function findAllAssignments() {
+    return db.assignments;
+};
 /** Fetch all the assignments for the course */
-export function findAssignmentsForCourse(courseId) {
-  const { assignments } = Database;
-  return assignments.filter((assignment) => assignment.course === courseId);
-}
 
-/** Create Assignment */
-export function createAssignment(assignment) {
-  const newAssignment = { ...assignment, _id: Date.now().toString() };
-  Database.assignments = [...Database.assignments, newAssignment];
-  return newAssignment;
-}
+export function findAssignmentsforCourse(courseId) {
+    const { assignments } = db;
+    const courseAssignments = assignments.filter((assignment) =>
+        assignment.course === courseId);
+    return courseAssignments;
+    
+};
 
-/** Delete Assignment */
-export function deleteAssignment(assignmentId) {
-  const { assignments } = Database;
-  Database.assignments = assignments.filter(
-    (assignment) => assignment._id !== assignmentId
-  );
-}
 
-/** Update Assignment */
+
 export function updateAssignment(assignmentId, assignmentUpdates) {
-  const { assignments } = Database;
-  const assignment = assignments.find(
-    (assignment) => assignment._id === assignmentId
-  );
-  Object.assign(assignment, assignmentUpdatesUpdates);
-  return assignment;
-}
+    const { assignments } = db;
+    const assignment = assignments.find((assignment) => assignment._id === assignmentId);
+    Object.assign(assignment, assignmentUpdates);
+    return assignment;
+};
+
+export function createAssignment(assignment) {
+    const newAssignment = { ...assignment, _id: Date.now().toString() };
+    db.assignments = [...db.assignments, newAssignment];
+    return newAssignment;
+};
+/** Delete Assignment */
+
+export function deleteAssignment(assignmentId) {
+    const { assignments } = db;
+    db.assignments = assignments.filter((assignment) => assignment._id !== assignmentId);
+};
+
