@@ -1,10 +1,8 @@
 import * as db from "../Database/index.js";
-/** Export all the courses */
 
 export function findAllCourses() {
   return db.courses;
 };
-/** Find enrolled course  */
 
 export function findCoursesForEnrolledUser(userId) {
   const { courses, enrollments } = db;
@@ -12,14 +10,12 @@ export function findCoursesForEnrolledUser(userId) {
     enrollments.some((enrollment) => enrollment.user === userId && enrollment.course === course._id));
   return enrolledCourses;
 };
-/** Add or Create New Course */
 
 export function createCourse(course) {
   const newCourse = { ...course, _id: Date.now().toString() };
   db.courses = [...db.courses, newCourse];
   return newCourse;
 };
-/** Delete a Course */
 
 export function deleteCourse(courseId) {
   const { courses, enrollments } = db;
@@ -28,7 +24,6 @@ export function deleteCourse(courseId) {
     (enrollment) => enrollment.course !== courseId
   );
 };
-/** UPdate a Course */
 
 export function updateCourse(courseId, courseUpdates) {
   const { courses } = db;

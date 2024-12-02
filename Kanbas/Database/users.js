@@ -1,5 +1,5 @@
-export default 
-[
+export default [
+ 
   {
     "_id": "123",
     "username": "iron_man",
@@ -7,7 +7,7 @@ export default
     "firstName": "Tony",
     "lastName": "Stark",
     "email": "tony@stark.com",
-    "dob": "1970-05-29T00:00:00.000Z",
+    "dob": "1970-05-29",
     "role": "FACULTY",
     "loginId": "001234561S",
     "section": "S101",
@@ -49,7 +49,7 @@ export default
     "firstName": "Thor",
     "lastName": "Odinson",
     "email": "thor@asgard.com",
-    "dob": "982-05-25",
+    "dob": "1982-05-25",
     "role": "STUDENT",
     "loginId": "001234565S",
     "section": "S101",
@@ -91,7 +91,7 @@ export default
     "firstName": "Aragorn",
     "lastName": "Elessar",
     "email": "aragorn@gondor.com",
-    "dob": "2931-03-01",
+    "dob": "1931-03-01",
     "role": "TA",
     "loginId": "001234568S",
     "section": "S101",
@@ -105,25 +105,11 @@ export default
     "firstName": "Legolas",
     "lastName": "Greenleaf",
     "email": "legolas@mirkwood.com",
-    "dob": "2879-07-15",
+    "dob": "1879-07-15",
     "role": "STUDENT",
     "loginId": "001234569S",
     "section": "S101",
     "lastActivity": "2020-11-11",
     "totalActivity": "21:32:43"
-  },
-  {
-    "_id": "777",
-    "username": "ada",
-    "password": "123",
-    "firstName": "Ada",
-    "lastName": "Lovelace",
-    "email": "ada@lovelace.com",
-    "dob": "1970-05-29T00:00:00.000Z",
-    "role": "ADMIN",
-    "loginId": "001234561S",
-    "section": "S101",
-    "lastActivity": "2020-10-01",
-    "totalActivity": "10:21:32"
   }
 ]

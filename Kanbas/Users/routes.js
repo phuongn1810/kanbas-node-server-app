@@ -6,21 +6,6 @@ export default function UserRoutes(app) {
   const deleteUser = (req, res) => { };
   const findAllUsers = (req, res) => { };
   const findUserById = (req, res) => { };
-
-
-  const findCoursesForEnrolledUser = (req, res) => {
-    let { userId } = req.params;
-    if (userId === "current") {
-      const currentUser = req.session["currentUser"];
-      if (!currentUser) {
-        res.sendStatus(401);
-        return;
-      }
-      userId = currentUser._id;
-    }
-    const courses = courseDao.findCoursesForEnrolledUser(userId);
-    res.json(courses);
-  };
   
   const updateUser = (req, res) => {
     const userId = req.params.userId;
@@ -78,5 +63,19 @@ export default function UserRoutes(app) {
   app.post("/api/users/signout", signout);
   app.post("/api/users/profile", profile);
 
+  const findCoursesForEnrolledUser = (req, res) => {
+    let { userId } = req.params;
+    if (userId === "current") {
+      const currentUser = req.session["currentUser"];
+      if (!currentUser) {
+        res.sendStatus(401);
+        return;
+      }
+      userId = currentUser._id;
+    }
+    const courses = courseDao.findCoursesForEnrolledUser(userId);
+    res.json(courses);
+  };
+  
   app.get("/api/users/:userId/courses", findCoursesForEnrolledUser);
 }

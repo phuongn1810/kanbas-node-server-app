@@ -9,19 +9,13 @@ export function findAllEnrollments() {
   return db.enrollments;
 };
 
-
-/** Add an enrollment */
+export function deleteEnrollment(enrollmentId) {
+  const { enrollments } = db;
+  db.enrollments = enrollments.filter((enrollment) => enrollment._id !== enrollmentId);
+};
 
 export function addEnrollment(enrollment) {
   const newEnrollment = { ...enrollment, _id: Date.now() };
   db.enrollments = [...db.enrollments, newEnrollment];
   return newEnrollment;
 };
-
-/** Delete an enrollment */
-
-export function deleteEnrollment(enrollmentId) {
-  const { enrollments } = db;
-  db.enrollments = enrollments.filter((enrollment) => enrollment._id !== enrollmentId);
-};
-
